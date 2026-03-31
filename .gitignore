@@ -1,0 +1,17 @@
+build/
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+
+android/.gradle/
+android/app/build/
+
+ios/Pods/
+ios/.symlinks/
+
+*.log
+*.tmp
+.DS_Store
+.idea/
+.vscode/
