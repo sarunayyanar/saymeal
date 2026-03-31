@@ -1,17 +1,36 @@
-build/
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ-related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .env file containing your API Key
+.env
+
+# Flutter/Dart-related
+**/doc/api/
+**/ios/Flutter/.last_build_id
 .dart_tool/
-.packages
+.flutter-plugins
+.flutter-plugins-dependencies
 .pub-cache/
 .pub/
+__pycache__/
+build/
 
-android/.gradle/
-android/app/build/
-
-ios/Pods/
-ios/.symlinks/
-
-*.log
-*.tmp
-.DS_Store
-.idea/
-.vscode/
+# Android-related
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/

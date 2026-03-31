@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meal History | Digital Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#006e28",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ededf2",
+                        "tertiary-fixed": "#ffdad7",
+                        "primary-container": "#34c759",
+                        "background": "#f9f9fe",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8ed",
+                        "inverse-on-surface": "#f0f0f5",
+                        "on-primary-fixed-variant": "#00531c",
+                        "primary": "#006e28",
+                        "outline-variant": "#bccbb8",
+                        "surface-dim": "#d9dade",
+                        "on-secondary-container": "#356e3c",
+                        "inverse-primary": "#53e16f",
+                        "on-surface-variant": "#3d4a3c",
+                        "on-primary-fixed": "#002107",
+                        "surface-variant": "#e2e2e7",
+                        "tertiary": "#9c413d",
+                        "secondary-container": "#b0efb0",
+                        "on-background": "#1a1c1f",
+                        "on-tertiary-fixed": "#410004",
+                        "on-secondary-fixed": "#002107",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e7",
+                        "secondary-fixed": "#b3f2b3",
+                        "secondary-fixed-dim": "#98d599",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#72fe88",
+                        "surface-container-low": "#f3f3f8",
+                        "on-tertiary-fixed-variant": "#7e2a27",
+                        "secondary": "#316a38",
+                        "surface-bright": "#f9f9fe",
+                        "on-secondary-fixed-variant": "#175123",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "on-primary-container": "#004d1a",
+                        "surface": "#f9f9fe",
+                        "tertiary-container": "#ff8e86",
+                        "primary-fixed-dim": "#53e16f",
+                        "inverse-surface": "#2e3034",
+                        "on-tertiary-container": "#772523",
+                        "on-surface": "#1a1c1f",
+                        "outline": "#6d7b6b",
+                        "error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#F9F9FE]/80 dark:bg-[#1A1C1F]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with a serene expression, soft natural lighting, minimalist aesthetic with clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8NGQm5un1qBCgGSZOMO-FZxwFLSxVEJKpJaFM7WZ6KVSmE_mHOBwB7ZuEyaAeK7Bd8UoPSzxcTnUYwva-Cx_rp79HTPirbJXFJ4_a6g-R_iLA3NcksEgbAEQlyLnLCzcPqbJd-vPWKrRytNoP3sKT8p0fvbBWGr6d3karEpmsUOrVwQWb0R-jaw8IO_TmFtEikdTrrT_BSHrX6IBDUg-ouXEHNFGFbRcp-KYRF2Hk-Glh6wkxGVOWLuS-8cx_u66lOQAut2dhNuI2"/>
+</div>
+<h1 class="font-manrope font-semibold text-lg text-[#006E28]">Today, Oct 24</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-400">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-6 pb-32">
+<!-- Daily Summary Bento -->
+<section class="mt-8 mb-12">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_20px_rgba(26,28,31,0.04)]">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label text-label-md text-outline uppercase tracking-widest block mb-2">Total Consumed</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-bold text-5xl tracking-tight text-on-surface">1,840</span>
+<span class="font-body text-body-md text-outline">kcal</span>
+</div>
+</div>
+<div class="relative w-24 h-24">
+<!-- SVG Progress Ring -->
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary rounded-full" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="60" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-weight="fill">restaurant</span>
+</div>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-3 gap-4">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block font-label text-[10px] text-outline uppercase mb-1">Protein</span>
+<span class="font-headline font-semibold text-on-surface">112g</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block font-label text-[10px] text-outline uppercase mb-1">Carbs</span>
+<span class="font-headline font-semibold text-on-surface">210g</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block font-label text-[10px] text-outline uppercase mb-1">Fats</span>
+<span class="font-headline font-semibold text-on-surface">54g</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meal Timeline -->
+<div class="space-y-12">
+<!-- Breakfast -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-headline-md text-on-surface">Breakfast</h2>
+<span class="font-label text-label-md text-outline">08:15 AM</span>
+</div>
+<div class="space-y-4">
+<!-- Meal Card -->
+<div class="relative overflow-hidden group">
+<!-- Action Reveal (Swipe Simulation) -->
+<div class="absolute right-0 top-0 bottom-0 flex items-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<!-- Main Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center gap-6 shadow-sm group-hover:-translate-x-12 transition-transform duration-300">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Avocado Toast" class="w-full h-full object-cover" data-alt="Gourmet avocado toast with a poached egg and chili flakes on a minimalist ceramic plate, soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_f3wbS0hcpR_1wmhe1K8poQsyCiQEpwY3mmnFral3rWLzKcWpfnv9OJS54B0Xdo6boLXbxFGVhwFOXZExOYzZL963o2Ab6qH1ENWbCENsKO9gsKTa3JoekCrOmtDoFgpbAmDSZI1iM533hXCdo-8OzKHVIEric7a0DlFQ9sxbSz2T86KBiv3wzwY5a4yC-wK7KLQAVPQ8gP55II_pkoUjpGtu-yR8RSkBgLfuAwKvukhKm8j0eB6HrMceo16ce9ucA6d8Tb8ZefFR"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-semibold text-on-surface">Avocado Poached Toast</h3>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-body text-body-md text-outline">420 kcal</span>
+<div class="flex gap-2 font-label text-[10px] text-outline-variant uppercase">
+<span>P:14g</span>
+<span>C:32g</span>
+<span>F:22g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lunch -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-headline-md text-on-surface">Lunch</h2>
+<span class="font-label text-label-md text-outline">01:30 PM</span>
+</div>
+<div class="space-y-4">
+<div class="relative overflow-hidden group">
+<div class="absolute right-0 top-0 bottom-0 flex items-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center gap-6 shadow-sm group-hover:-translate-x-12 transition-transform duration-300">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Quinoa Salad" class="w-full h-full object-cover" data-alt="Lush green quinoa salad with kale, chickpeas and pomegranate seeds in a high-end white bowl, bright editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6d7r5Uyn-C08vUM_3mAWTNgvWzJn-ZXLpH7j-YZOXhFyxFtq6fjuiZMVUTn5TyQcoVECFJXhyl0q5z6C0xXMNZNcCRBX8HOg4a1KmpSlPFJVsyIgPATehNWXhU5lH-z8O75Tvdios_HMDasF_Wh9BKSBes17OE5OxLpexMdjX-oL9yNrmgqs6yfgEcopyYZzQeRKCKC4BhQl1IrwOTCc9PCO890Jem7FplzrjyuO3XDU7xYZHcmGVN5UREy8b5kOWV85CTtUcVB_A"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-semibold text-on-surface">Quinoa Power Salad</h3>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-body text-body-md text-outline">350 kcal</span>
+<div class="flex gap-2 font-label text-[10px] text-outline-variant uppercase">
+<span>P:20g</span>
+<span>C:45g</span>
+<span>F:12g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dinner -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-headline-md text-on-surface">Dinner</h2>
+<span class="font-label text-label-md text-outline">07:45 PM</span>
+</div>
+<div class="space-y-4">
+<div class="relative overflow-hidden group">
+<div class="absolute right-0 top-0 bottom-0 flex items-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center gap-6 shadow-sm group-hover:-translate-x-12 transition-transform duration-300">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Salmon" class="w-full h-full object-cover" data-alt="Pan-seared salmon fillet with grilled asparagus on a dark slate plate, moody restaurant-style lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACXoLWNAVMvVcF7yhBr08ocKoklPNGBCUseSZBREMbYFjxlIDtHvRFonE4-I_HGvYuwAIDZvrXI_EYQxYlDDoUDyV2p_TEciOYdWa1UHH9oxH9vDVJv5qAuhX1QEGgNR5FYimsG2Knp8SxqRSvmbmYE4MZm7zD6qdlet3iVpuid2XZ9sbbviwriy4zilRK64K24yPRTXiWNDyfV9TRscPObp_N04dioXLkDKQBExcUGi8wIEY8sxxLmVhacVgYXZ8J3LtrzIBJsnHc"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-semibold text-on-surface">Seared Atlantic Salmon</h3>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-body text-body-md text-outline">580 kcal</span>
+<div class="flex gap-2 font-label text-[10px] text-outline-variant uppercase">
+<span>P:42g</span>
+<span>C:12g</span>
+<span>F:32g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Snacks -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-headline-md text-on-surface">Snacks</h2>
+<span class="font-label text-label-md text-outline">Multiple Logs</span>
+</div>
+<div class="space-y-4">
+<!-- Snack 1 -->
+<div class="relative overflow-hidden group">
+<div class="absolute right-0 top-0 bottom-0 flex items-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-6 group-hover:-translate-x-12 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">ios</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-body font-medium text-on-surface">Green Apple</h3>
+<span class="font-label text-[10px] text-outline">11:00 AM</span>
+</div>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-body text-body-sm text-outline">95 kcal</span>
+<div class="flex gap-2 font-label text-[10px] text-outline-variant uppercase">
+<span>C:25g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Snack 2 -->
+<div class="relative overflow-hidden group">
+<div class="absolute right-0 top-0 bottom-0 flex items-center gap-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-6 group-hover:-translate-x-12 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">nutrition</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-body font-medium text-on-surface">Almond Handful</h3>
+<span class="font-label text-[10px] text-outline">04:20 PM</span>
+</div>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-body text-body-sm text-outline">165 kcal</span>
+<div class="flex gap-2 font-label text-[10px] text-outline-variant uppercase">
+<span>P:6g</span>
+<span>F:14g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-6 bg-[#F9F9FE]/90 dark:bg-[#1A1C1F]/90 backdrop-blur-2xl shadow-[0_-10px_40px_rgba(26,28,31,0.06)] rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 p-2 hover:text-[#006E28] transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-manrope font-bold text-[10px] tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 p-2 hover:text-[#006E28] transition-all" href="#">
+<span class="material-symbols-outlined">donut_large</span>
+<span class="font-manrope font-bold text-[10px] tracking-tight">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#006E28] to-[#34C759] text-white rounded-full p-3 mb-4 scale-110 shadow-lg transform transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-manrope font-bold text-[10px] tracking-tight">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#006E28] dark:text-[#34C759] p-2 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-manrope font-bold text-[10px] tracking-tight">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 p-2 hover:text-[#006E28] transition-all" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-manrope font-bold text-[10px] tracking-tight">Insights</span>
+</a>
+</nav>
+<!-- FAB Suppression for History screen logic applied (Not needed here as per nav shell layout) -->
+</body></html>
